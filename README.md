@@ -38,7 +38,7 @@ like adjusting this in config file
 
 ## Making Media player work
 ![ezgif-54295365b2a3790a](https://github.com/user-attachments/assets/ee6b1982-560e-4a0f-b83f-57288c5c5370)
-- As i said playerctl is requirment for this and a Script file i also added the media.sh file in waybar/media.sh 
+- As i said playerctl is required for this and a Script file i also added the media.sh file in waybar/media.sh 
 - To make it work seamlessly you need Nerd Fonts for the play/pause icon in the media
 - Place the media.sh folder in your waybar folder to work
 
