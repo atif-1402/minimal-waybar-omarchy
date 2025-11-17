@@ -1,0 +1,76 @@
+* {
+    border: none;
+    font-family: "SF Pro Display", "JetBrainsMono Nerd Font Propo";
+    font-size: 10px;
+    
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+tooltip {
+  background: rgba(4, 4, 4, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+
+#workspaces {
+    transition: all 150ms ease-in-out;
+}
+
+#workspaces button {
+    transition: all 150ms ease-in-out;
+    padding: 0px 0px;
+    background:alpha(#121212, 0.4);
+    color: white;
+    border: 1px solid #434343;
+    border-radius: 10px;
+    margin: 0 2px;
+}
+
+#workspaces button.active {
+    border: 1px solid aliceblue;
+    background-color:aliceblue;
+    color:#121212;
+    transition: all 150ms ease-in-out;
+    min-width: 35px;
+    border-radius: 100px;
+}
+
+#clock {
+    font-weight: 800;
+    background:alpha(#121212, 0.4);
+    border-radius: 8px;
+    padding: 0px 5px;
+}
+
+#pulseaudio {
+    font-weight: 800;
+    background:alpha(#121212, 0.4);
+    border-radius: 8px;
+    padding: 0px 5px;
+}
+
+#tray {
+    font-weight: 800;
+    background:alpha(#121212, 0.4);
+    border-radius: 8px;
+    padding: 0px 5px;
+    margin: 0 2px;
+}
+
+#custom-media {
+    margin: 0 2px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    color: aliceblue; /* aliceblue */
+    font-weight: bold;
+}
