@@ -1,6 +1,6 @@
 # Waybar Themes for Omarchy
 
-## V2
+## V1.5
 This the V2 version of my waybar done somework on it and added more things
 <img width="1366" height="27" alt="image" src="https://github.com/user-attachments/assets/51abf517-08de-41c2-971d-711abad8cf2d" />
 
