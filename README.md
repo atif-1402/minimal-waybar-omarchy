@@ -101,7 +101,7 @@ like adjusting this in config file
    - Using Pills like module to get Material UI
    - Added Window Module 
    - better clock
-   - better tooltip (previewed only one there is more)
+   - better tooltip 
      
 
 # Installation
