@@ -130,7 +130,8 @@ tooltip label {
 #custom-omarchy{
   border-radius: 99px;
   margin:3px;
-  padding: 0 5px;
+  padding-right:5px;
+  padding-left: 1px;
 
 }
 
