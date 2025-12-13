@@ -1,0 +1,130 @@
+{
+    "custom/power": {
+	"format": "⏻",
+	"on-click": "$HOME/.config/hypr/scripts/Wlogout.sh",
+	"on-click-right": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
+	"tooltip": true,
+	"tooltip-format":"Shutdown",
+},
+
+"custom/reboot": {
+    "format": "",
+    "on-click": "systemctl reboot",
+    "tooltip": true,
+	"tooltip-format": "Reboot",
+},
+
+//Groups..
+
+
+"group/main": {
+	"orientation": "inherit",
+	"modules": [
+		"custom/omarchy",
+		"custom/separator#blank",
+		"custom/vicinae",
+	]
+},
+
+// Separators
+
+"custom/separator#dot": {
+	"format": "",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#dot-line": {
+	"format": "",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#tinyr": {
+	"format": "›",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#tinyl": {
+	"format": "‹",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#aright": {
+	"format": "",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#aleft": {
+	"format": "",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#line": {
+	"format": "|",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#blank": {
+	"format": " ",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#blank_2": {
+	"format": "  ",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#blank_3": {
+	"format": "   ",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/arrow1": {
+	"format": "",
+	"tooltip": false
+},
+
+"custom/arrow2": {
+	"format": "",
+	"tooltip": false
+},
+
+"custom/arrow3": {
+	"format": "",
+	"tooltip": false
+},
+
+"custom/arrow4": {
+	"format": "",
+	"tooltip": false
+},
+
+"custom/arrow5": {
+	"format": "",
+	"tooltip": false
+},
+
+"custom/arrow6": {
+	"format": "",
+	"tooltip": false
+},
+
+"custom/arrow7": {
+	"format": "",
+	"tooltip": false
+},
+
+"custom/arrow8": {
+	"format": "",
+	"tooltip": false
+},
+
+"custom/arrow9": {
+	"format": "",
+	"tooltip": false
+},
+
+"custom/arrow10": {
+	"format": "",
+	"tooltip": false
+}
+}
