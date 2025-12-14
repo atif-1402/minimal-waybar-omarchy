@@ -98,7 +98,7 @@
   },
 
   "pulseaudio": {
-    "format": "{icon}{volume}%",
+    "format": "{icon} {volume}%",
     "on-click": "omarchy-launch-or-focus-tui wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
@@ -174,17 +174,6 @@
 	  "tooltip": false
 },
 
-  "custom/updatespacman": {
-    "format": "{icon}",
-    "return-type": "json",
-    "format-icons": {
-      "has-updates": "󰏔",
-      "updated": "󰂪 "
-    },
-    "exec-if": "which waybar-module-pacman-updates",
-    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
-  },
-
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -228,10 +217,9 @@
   "group/ctl": {
 	"orientation": "inherit",
 	"modules": [
+    "custom/screenrecording-indicator",
     "idle_inhibitor",
     "custom/update", 
-    "custom/screenrecording-indicator",
-    "custom/updatespacman",
     "custom/separator#blank",
     "bluetooth",
     "network",
@@ -240,5 +228,9 @@
     "battery",
 	]
 },
+
+  "custom/bt": {
+    "format": "",
+  }
   	
 },
