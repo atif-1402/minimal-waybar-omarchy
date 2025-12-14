@@ -1,0 +1,153 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+  color: @foreground;
+  border: none;
+  border-radius: 25;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 12px;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+window#waybar {
+  background-color: @background;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+}
+#waybar.empty .modules-center {
+  opacity: 0;
+}
+
+#workspaces {
+    padding: 0px 5px;
+    margin: 3.5 3.5px;
+    border-radius: 16px;
+    background-color: alpha(@foreground, 0.1);
+    opacity: 0.95;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#cpu,
+#battery,
+#custom-updatespacman
+#pulseaudio,
+#custom-power,
+#custom-screenrecording-indicator,
+#custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#tray {
+  background:alpha(@foreground, 0.0);
+  border-radius: 16px;
+  padding: 0px 5px;
+  margin: 3.5 2px;
+  margin-right: 1px;
+}
+
+#bluetooth {
+  margin-right: 17px;
+}
+
+#idle_inhibitor {
+  margin-right: 18px;
+}
+
+#network {
+  margin-right: 13px;
+}
+
+#custom-expand-icon {
+  margin-right: 10px;
+}
+
+tooltip {
+  background: @background;
+  border: 1px solid @foreground;
+}
+tooltip label {
+  color: white;
+}
+
+
+#custom-update {
+  font-size: 10px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #a55555;
+}
+
+#custom-lock,
+#clock,
+#mpris {
+    font-weight: 800;
+    background:alpha(@foreground, 0.1);
+    border-radius: 16px;
+    padding: 0px 5px;
+    margin: 3.5 3.5px;
+}
+
+#custom-omarchy{
+  border-radius: 99px;
+  margin:3px;
+  padding: 0 5px;
+
+}
+
+#window {
+    font-weight: 800;
+    background:alpha(@foreground, 0.1);
+    border-radius: 16px;
+    padding: 0px 5px;
+    margin: 3.5 2px;
+}
+
+#group-ctl,
+#group_ctl,
+#ctl {
+    font-weight: 800;
+    background:alpha(@foreground, 0.1);
+    border-radius: 16px;
+    padding: 0px 5px;
+    margin: 3.5 2px;
+}
