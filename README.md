@@ -104,8 +104,8 @@ like adjusting this in config file
    - better tooltip 
 
 ## V2.4
-<img width="1366" height="287" alt="screenshot-2025-12-14_17-43-53" src="https://github.com/user-attachments/assets/902f489f-0760-435a-a41f-2372396f340e" />
-<img width="1366" height="289" alt="screenshot-2025-12-14_17-43-10" src="https://github.com/user-attachments/assets/389554ce-8205-4b8f-b5e5-460fe68dabbc" />
+ <img width="1366" height="287" alt="screenshot-2025-12-14_17-43-53" src="https://github.com/user-attachments/assets/902f489f-0760-435a-a41f-2372396f340e" />
+ <img width="1366" height="289" alt="screenshot-2025-12-14_17-43-10" src="https://github.com/user-attachments/assets/389554ce-8205-4b8f-b5e5-460fe68dabbc" />
 
 ### What's New
    - Changed the workspace module
