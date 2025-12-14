@@ -1,5 +1,7 @@
 # Waybar Themes for Omarchy
 
+## [Installation](https://github.com/atif-1402/minimal-waybar-omarchy#installation)
+
 ## V1
 This is the first waybar theme version and i try my best to update it and make more themes like this
 <img width="1366" height="31" alt="image" src="https://github.com/user-attachments/assets/abe6a97e-c4d3-4159-aaa3-d1c19cd7d1c6" />
