@@ -80,7 +80,6 @@ window#waybar.empty #window {
 
 #cpu,
 #battery,
-#custom-updatespacman
 #pulseaudio,
 #custom-power,
 #custom-screenrecording-indicator,
@@ -98,15 +97,15 @@ window#waybar.empty #window {
 }
 
 #bluetooth {
-  margin-right: 17px;
+  margin-right: 6px;
 }
 
 #idle_inhibitor {
-  margin-right: 18px;
+  margin-right: 9px;
 }
 
 #network {
-  margin-right: 13px;
+  margin-right: 9px;
 }
 
 #custom-expand-icon {
@@ -137,7 +136,7 @@ tooltip label {
 }
 
 #custom-screenrecording-indicator.active {
-  color: #a55555;
+  color: #f13333;
 }
 
 #custom-lock,
