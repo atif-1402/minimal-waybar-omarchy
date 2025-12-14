@@ -51,7 +51,7 @@
   },
 
   "cpu": {
-    "interval": 5,
+    "interval": 2,
     "format": "󰍛 {usage}%",
     "on-click": "omarchy-launch-or-focus-tui btop"
   },
@@ -103,7 +103,7 @@
   },
 
   "pulseaudio": {
-    "format": "{icon} {volume}% ",
+    "format": "{icon}{volume}%",
     "on-click": "omarchy-launch-or-focus-tui wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
@@ -111,7 +111,9 @@
     "format-muted": "",
     "format-icons": {
       "default": [
-        "", "", ""
+        "",
+        " ",
+        " "
       ]
     }
   },
