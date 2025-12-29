@@ -1,0 +1,129 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+  background-color: alpha(@background, 0.9);
+  color: @foreground;
+
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 12px;
+  border: 0px solid alpha(@foreground, 0.6)
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces {
+  transition: all 150ms ease-in-out;
+}
+
+#workspaces button {
+  all: initial;
+  transition: all 90ms ease-in-out;  
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+  border-radius: 0px;
+  border: 0px solid alpha(@foreground, 0.64);
+  border-bottom-width: 2px;
+}
+
+#workspaces button.empty {
+  transition: all 90ms ease-in-out;
+  opacity: 0.5;
+}
+
+#workspaces button.active {
+  transition: all 90ms ease-in-out;
+  border-radius: 0px;
+  border: 0px solid alpha(@foreground, 0.64);
+  border-bottom-width: 4px;
+}
+
+#cpu,
+#idle_inhibitor,
+#battery,
+#custom-screenrecording-indicator,
+#custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#custom-gamemode {
+  margin-left: 2px;
+  margin-right: 8px;
+}
+
+#pulseaudio {
+  margin-right: 4px;
+  margin-left: 1px;
+}
+
+#tray {
+  margin-right: 4px;
+}
+
+#bluetooth {
+  margin-right: 17px;
+}
+
+#network {
+  margin-right: 10px;
+  margin-left: 6px;
+}
+
+#custom-expand-icon {
+  margin-right: 10px;
+}
+
+tooltip {
+  padding: 2px;
+}
+
+#custom-update {
+  font-size: 10px;
+}
+
+#clock {
+  margin-left: 8.75px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #a55555;
+}
+
+#custom-omarchy {
+  background-color: alpha(@foreground, 0.2);
+  /* border-radius: 2px; */
+  padding-right: 1.5px;
+  padding-left: 0px;
+  min-width: 24px;
+  margin: 0 1px;
+  margin-right: 4px; 
+  /* margin-top: 1px; */
+  /* margin-bottom: 1px; */
+}
+
+#mpris {
+    font-weight: 600;
+    border-radius: 16px;
+    padding: 0px 5px;
+    margin: 3.5 3.5px;
+}
