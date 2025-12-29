@@ -111,7 +111,20 @@ like adjusting this in config file
    - Changed the workspace module
    - Uses Kanji Characters in Workspace
    - Added ease-in-out transition while switching workspaces 
-     
+
+## V3
+ <img width="1366" height="210" alt="screenshot-2025-12-29_23-54-51" src="https://github.com/user-attachments/assets/bfb833ae-41a6-424a-b7cd-5048ac2aff3a" />
+ <img width="1366" height="208" alt="screenshot-2025-12-29_23-55-31" src="https://github.com/user-attachments/assets/e17ba819-4af2-4e5b-9755-bd0c037f3f1a" />
+
+### What's New
+   - New Look
+   - Roman Number Workspaces
+   - Bottem Border in workspace with transition
+   - More Info Modules
+   - Game Mode (Disable Hyprland Blur & Animations)
+
+### Adjustment for Laptop Users 
+   - Sorry But i am a PC user and cant get my hands on battery, etc modules i try to fake it but it messed up so you need to configure those module by your own Sorry.
 
 # Installation
 - I RECOMMEND TO BACKUP YOUR EXISTING WAYBAR FOLDER AND CONFIG
