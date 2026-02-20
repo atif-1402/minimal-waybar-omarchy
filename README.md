@@ -4,11 +4,6 @@
 This is the first waybar theme version and i try my best to update it and make more themes like this
 <img width="1366" height="31" alt="image" src="https://github.com/user-attachments/assets/abe6a97e-c4d3-4159-aaa3-d1c19cd7d1c6" />
 
-
-https://github.com/user-attachments/assets/ef6b1069-8943-4051-8e95-67a8c92baa36
-
-
-
 ### Basic features this waybar provide 
  - Minimal workspace switcher
  - Middle minimal clock
@@ -136,7 +131,7 @@ like adjusting this in config file
    - More!
 
 ### Cons
-   - Manually need to change color for $esc_bottom in window.sh if you use light theme
+   - <b>Only if you use light theme</b> you need to manually change the color for $esc_bottom in window.sh 
      ```bash
            text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
      <span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
