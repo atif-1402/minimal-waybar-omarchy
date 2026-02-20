@@ -120,10 +120,29 @@ like adjusting this in config file
    - New Look
    - Roman Number Workspaces
    - Bottem Border in workspace with transition
-   - More Info Modules
+   - More Stats Modules
    - Game Mode (Disable Hyprland Blur & Animations)
 
-### Adjustment for Laptop Users 
+## V4
+<img width="1366" height="236" alt="image" src="https://github.com/user-attachments/assets/021a4bdb-0e93-4789-a4da-23bb05ff0630" />
+<img width="1366" height="240" alt="image" src="https://github.com/user-attachments/assets/ed1a8a5c-9f39-4d77-8fe4-4490a21896c6" />
+
+### What's New
+   - New Look
+   - Similar to end 4 dots bar
+   - custom window.sh to grep active window (no hyprland/window module)
+   - weather module automatically set location by your IP
+   - custom media module (no mpris)
+   - More!
+
+### Cons
+   - Manually need to change color for $esc_bottom in window.sh if you use light theme
+     ```bash
+           text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
+     <span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
+      ```
+
+## Adjustment for Laptop Users 
    - Sorry But i am a PC user and cant get my hands on battery, etc modules i try to fake it but it messed up so you need to configure those module by your own Sorry.
 
 # Installation
