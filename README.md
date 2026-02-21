@@ -130,6 +130,13 @@ like adjusting this in config file
    - custom media module (no mpris)
    - More!
 
+### V4.x
+<img width="1366" height="42" alt="image" src="https://github.com/user-attachments/assets/d54181c4-6023-4eda-9713-eb6a4abd11ea" />
+
+   - Adjusted Workspaces and added transition
+   - Added Gamemode
+   - Cons are still same (working on it)
+
 ### Cons
    - <b>Only if you use light theme</b> you need to manually change the color for $esc_bottom in window.sh 
      ```bash
