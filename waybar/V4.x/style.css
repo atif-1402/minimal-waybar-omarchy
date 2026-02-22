@@ -47,7 +47,6 @@ window#waybar.empty #window {
 
 #workspaces button {
   color: @foreground;
-  all: initial;
   padding: 0 6px;
   margin: 0 1.5px;
   min-width: 9px;
