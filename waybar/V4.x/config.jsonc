@@ -66,8 +66,7 @@
         "format-icons": {
           "default": "",
           "active": "",
-          "urgent": "",
-          "empty": "",
+          "empty": "",
         },
       "persistent-workspaces": {
       "1": [],
@@ -83,7 +82,7 @@
 
   "custom/omarchy": {
     // "format": "󰹡",
-    "format": "<span size='12500'></span>",
+    "format": "<span size='11500'></span>",
     "on-click": "omarchy-menu",
     "on-click-right": "xdg-terminal-exec",
     "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
