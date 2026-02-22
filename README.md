@@ -1,5 +1,13 @@
 # Waybar Themes for Omarchy
 
+## Installation
+
+#### <b>I Highly Recommend to backup your current waybar or you lose it after installation</b>
+#### Just run this command and select the version you want to install (fzf should be installed inorder to run the installer.)    
+   ```
+bash <(curl -s https://raw.githubusercontent.com/atif-1402/minimal-waybar-omarchy/main/install.sh)
+```
+
 ## V1
 This is the first waybar theme version and i try my best to update it and make more themes like this
 <img width="1366" height="31" alt="image" src="https://github.com/user-attachments/assets/abe6a97e-c4d3-4159-aaa3-d1c19cd7d1c6" />
@@ -121,6 +129,11 @@ like adjusting this in config file
 ## V4
 <img width="1366" height="236" alt="image" src="https://github.com/user-attachments/assets/021a4bdb-0e93-4789-a4da-23bb05ff0630" />
 <img width="1366" height="240" alt="image" src="https://github.com/user-attachments/assets/ed1a8a5c-9f39-4d77-8fe4-4490a21896c6" />
+
+### Make the window.sh executable by 
+```
+chmod +x ~/.config/waybar/window.sh
+```
 
 ### What's New
    - New Look
