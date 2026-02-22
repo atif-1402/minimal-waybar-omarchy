@@ -2,7 +2,7 @@
 
 ## Installation
 
-#### <b>I Highly Recommend to backup your current waybar or you lose it after installation</b>
+#### <b>A backup of your current waybar created in ~/.config/waybar.bak.(timestamps) folder </b>
 #### Just run this command and select the version you want to install (fzf should be installed inorder to run the installer.)    
    ```
 curl -s https://raw.githubusercontent.com/atif-1402/minimal-waybar-omarchy/main/install.sh | bash
@@ -150,6 +150,29 @@ chmod +x ~/.config/waybar/window.sh
    - Added Gamemode
    - Cons are still same (working on it)
 
+### Cons
+   - <b>Only if you use light theme</b> you need to manually change the color for $esc_bottom in window.sh 
+     ```bash
+           text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
+     <span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
+      ```
+
+## V5
+<img width="1366" height="188" alt="image" src="https://github.com/user-attachments/assets/bead663a-aa9f-4499-bf99-852639def878" />
+<img width="1366" height="179" alt="image" src="https://github.com/user-attachments/assets/1e5c7a18-93af-4ae4-8a4e-8f47a7f00e1b" />
+
+### Make the window.sh executable by 
+```
+chmod +x ~/.config/waybar/window.sh
+```
+
+### What's New
+   - New Look
+   - Similar to AxOS bar
+   - custom window.sh to grep active window (no hyprland/window module)
+   - expandable groups to debloat and attain minimalism
+   - More!
+   - 
 ### Cons
    - <b>Only if you use light theme</b> you need to manually change the color for $esc_bottom in window.sh 
      ```bash
