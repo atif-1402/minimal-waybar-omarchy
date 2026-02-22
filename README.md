@@ -1,8 +1,8 @@
 # Waybar Themes for Omarchy
 
-## Installation
+# Installation
 
-#### <b>A backup of your current waybar created in ~/.config/waybar.bak.(timestamps) folder </b>
+#### A backup of your current waybar created in ~/.config/waybar.bak.(timestamps) folder
 #### Just run this command and select the version you want to install (fzf should be installed inorder to run the installer.)    
    ```
 curl -s https://raw.githubusercontent.com/atif-1402/minimal-waybar-omarchy/main/install.sh | bash
@@ -182,9 +182,4 @@ chmod +x ~/.config/waybar/window.sh
 
 ## Adjustment for Laptop Users 
    - Sorry But i am a PC user and cant get my hands on battery, etc modules i try to fake it but it messed up so you need to configure those module by your own Sorry.
-
-# Installation
-- I RECOMMEND TO BACKUP YOUR EXISTING WAYBAR FOLDER AND CONFIG
-- First delete the config.jsonc and style.css from your Waybar folder then drop the download config.jsonc, style.css and other file in waybar folder
-- Finally pkill and reload the waybar (for omarchy press Shift + Super + Space to kill waybar then same key again to reload)
 
