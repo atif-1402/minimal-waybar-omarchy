@@ -4,6 +4,8 @@ set -e
 
 echo "== Minimal Waybar Installer =="
 
+REPO="https://github.com/atif-1402/minimal-waybar-omarchy.git"
+
 # Check fzf
 if ! command -v fzf >/dev/null 2>&1; then
     echo "fzf not found. Installing..."
@@ -20,11 +22,17 @@ fi
 # Create temp directory
 tmp=$(mktemp -d)
 
-# Clone repo
-git clone https://github.com/atif-1402/minimal-waybar-omarchy.git "$tmp"
+echo "Cloning repository..."
+git clone --depth 1 "$REPO" "$tmp" >/dev/null 2>&1
+
+if [ ! -d "$tmp/waybar" ]; then
+    echo "Error: waybar directory not found in repo."
+    rm -rf "$tmp"
+    exit 1
+fi
 
 # Select version
-ver=$(find "$tmp/waybar" -mindepth 1 -maxdepth 1 -type d -printf "%f\n" | fzf --prompt="Select Waybar Version > ")
+ver=$(find "$tmp/waybar" -mindepth 1 -maxdepth 1 -type d -printf "%f\n" | sort | fzf --prompt="Select Waybar Version > ")
 
 if [ -z "$ver" ]; then
     echo "No version selected. Exiting."
@@ -35,12 +43,12 @@ fi
 # Backup existing config
 if [ -d "$HOME/.config/waybar" ]; then
     echo "Backing up existing Waybar config..."
-    mv ~/.config/waybar ~/.config/waybar.backup.$(date +%s)
+    mv "$HOME/.config/waybar" "$HOME/.config/waybar.backup.$(date +%s)"
 fi
 
-# Install
-mkdir -p ~/.config/waybar
-cp -rf "$tmp/waybar/$ver/." ~/.config/waybar
+# Install selected version
+mkdir -p "$HOME/.config/waybar"
+cp -rf "$tmp/waybar/$ver/." "$HOME/.config/waybar"
 
 echo "Installed version: $ver"
 
