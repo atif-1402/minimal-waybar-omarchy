@@ -5,7 +5,7 @@
 #### <b>I Highly Recommend to backup your current waybar or you lose it after installation</b>
 #### Just run this command and select the version you want to install (fzf should be installed inorder to run the installer.)    
    ```
-bash <(curl -s https://raw.githubusercontent.com/atif-1402/minimal-waybar-omarchy/main/install.sh)
+curl -s https://raw.githubusercontent.com/atif-1402/minimal-waybar-omarchy/main/install.sh | bash
 ```
 
 ## V1
