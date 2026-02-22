@@ -21,25 +21,7 @@ This is the first waybar theme version and i try my best to update it and make m
    ```bash
    sudo pacman -S playerctl
    ```
-### Adjustment to accoring to your resolution
-
-- The waybar can mess up in your display or resoultion try checking the config file and do some dimension related adjustment 
-like adjusting this in config file
-```bash
-   {
-    "layer": "top",
-    "position": "top",
-    "margin-top": 5,
-    "width": 1250,
-    "modules-left": ["hyprland/workspaces", "custom/media", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio" ],
-    "sway/window": {
-        "max-length": 50
-    },
-  ```
-- By adjusting config a little you can attain a minimal look for your resoultion
-
+   
 ### Making Media player work
 ![ezgif-54295365b2a3790a](https://github.com/user-attachments/assets/ee6b1982-560e-4a0f-b83f-57288c5c5370)
 - As i said playerctl is required for this and a Script file i also added the media.sh file in waybar/media.sh 
@@ -60,29 +42,6 @@ This the V1.5 version of my waybar done somework on it and added more things
    - You can switch between active workspace by scrolling on the workspace module
    - better clock
    - better tooltip (previewed only one there is more)
-
-     <img width="562" height="153" alt="image" src="https://github.com/user-attachments/assets/8b34797d-6e70-4ca0-a7b5-7d670c727f61" />
-
-
-
-### Adjustment to accoring to your resolution
-
-- The waybar can mess up in your display or resoultion try checking the config file and do some dimension related adjustment 
-like adjusting this in config file
-```bash
-   {
-    "layer": "top",
-    "position": "top",
-    "margin-top": 5,
-    "width": 1250,
-    "modules-left": ["hyprland/workspaces", "custom/media", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio" ],
-    "sway/window": {
-        "max-length": 50
-    },
-  ```
-- By adjusting config a little you can attain a minimal look for your resoultion
 
   ### Suggetions
    - Use blur for waybar in your hyprland.conf
