@@ -70,6 +70,15 @@ window#waybar.empty #window {
   padding-left: 5px;
 }
 
+#workspaces button.active:hover {
+  background-color: alpha(@background, 0.5);
+  color: @foreground;
+} 
+
+#workspaces button:hover {
+  background-color: transparent;
+}
+
 #workspaces button.empty:hover {
   border-radius: 18px;
   background: transparent;
