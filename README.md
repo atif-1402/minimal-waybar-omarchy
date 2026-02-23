@@ -5,7 +5,7 @@
 #### A backup of your current waybar created in ~/.config/waybar.bak.(timestamps) folder
 #### Just run this command and select the version you want to install (fzf should be installed inorder to run the installer.)    
    ```
-curl -s https://raw.githubusercontent.com/atif-1402/minimal-waybar-omarchy/main/install.sh | bash
+curl -s https://raw.githubusercontent.com/atif-1402/minimal-waybar-themes/main/install.sh | bash
 ```
 
 ## V1
