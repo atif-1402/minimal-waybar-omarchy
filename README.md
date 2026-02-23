@@ -151,7 +151,7 @@ chmod +x ~/.config/waybar/window.sh
 ```
 
 ### What's New
-   - New Look
+   - New Look (base of V5 with more tweaks)
    - Bottom Bar
    - custom window.sh to grep active window (no hyprland/window module)
    - expandable mpris module to debloat and attain minimalism
