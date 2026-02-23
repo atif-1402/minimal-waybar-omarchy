@@ -134,7 +134,7 @@ chmod +x ~/.config/waybar/window.sh
    - custom window.sh to grep active window (no hyprland/window module)
    - expandable groups to debloat and attain minimalism
    - More!
-   - 
+     
 ### Cons
    - <b>Only if you use light theme</b> you need to manually change the color for $esc_bottom in window.sh 
      ```bash
