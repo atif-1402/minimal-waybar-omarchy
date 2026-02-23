@@ -1,7 +1,10 @@
-# Minimal Waybar Themes 
+## Minimal Waybar Themes 
 
-# Installation
+## Compatibility
+- These configs are Omarchy-based, including optional Omarchy-specific modules (logo, screen recorder, update module).
+- Aside from that, they use standard modules so they can be used on any distro by simply removing the Omarchy modules and set your own color scheme.
 
+## Installation
 #### A backup of your current waybar created in ~/.config/waybar.bak.(timestamps) folder
 #### Just run this command and select the version you want to install (fzf should be installed inorder to run the installer.)    
    ```
