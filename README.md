@@ -141,6 +141,29 @@ chmod +x ~/.config/waybar/window.sh
            text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
      <span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
       ```
+## V6
+<img width="1366" height="175" alt="screenshot-2026-02-23_15-25-56" src="https://github.com/user-attachments/assets/cb0c1ceb-7463-42d3-ba3f-5e26a4628359" />
+<img width="1366" height="177" alt="screenshot-2026-02-23_15-30-19" src="https://github.com/user-attachments/assets/6178b4f2-0cc6-46c9-8c05-29974b50316e" />
+
+### Make the window.sh executable by 
+```
+chmod +x ~/.config/waybar/window.sh
+```
+
+### What's New
+   - New Look
+   - Bottom Bar
+   - custom window.sh to grep active window (no hyprland/window module)
+   - expandable mpris module to debloat and attain minimalism
+   - removed the cpu,mem & vol to debloat 
+   - More!
+
+### Cons
+   - <b>Only if you use light theme</b> you need to manually change the color for $esc_bottom in window.sh 
+     ```bash
+           text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
+     <span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
+      ```
 
 ## Adjustment for Laptop Users 
    - Sorry But i am a PC user and cant get my hands on battery, etc modules i try to fake it but it messed up so you need to configure those module by your own Sorry.
