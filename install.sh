@@ -4,7 +4,7 @@ set -e
 
 echo "== Minimal Waybar Installer =="
 
-REPO="https://github.com/atif-1402/minimal-waybar-omarchy.git"
+REPO="https://github.com/atif-1402/minimal-waybar-themes.git"
 
 # Check fzf
 if ! command -v fzf >/dev/null 2>&1; then
