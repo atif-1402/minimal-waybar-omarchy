@@ -1,4 +1,4 @@
-# Waybar Themes for Omarchy
+# Minimal Waybar Themes 
 
 # Installation
 
