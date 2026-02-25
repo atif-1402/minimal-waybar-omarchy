@@ -32,7 +32,7 @@
   margin: 0 1.5px;
   min-width: 9px;
   border-radius: 0px;
-  border: 0px solid alpha(@foreground, 0.6);
+  border: 0px solid alpha(@foreground, 0.8);
   border-bottom-width: 2px;
 }
 
@@ -46,11 +46,16 @@
   opacity: 0.8;
 }
 
-#workspaces button:hover,
+#workspaces button:hover{
+  border: 0px solid alpha(@foreground, 0.8);
+  border-bottom-width: 3px;
+  transition: all 90ms ease-in-out;
+}
+
 #workspaces button.active {
   transition: all 90ms ease-in-out;
   border-radius: 0px;
-  border: 0px solid alpha(@foreground, 0.64);
+  border: 0px solid alpha(@foreground, 1);
   border-bottom-width: 3px;
 }
 
