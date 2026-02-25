@@ -193,6 +193,25 @@ chmod +x ~/.config/waybar/window.sh
 
 ---
 
+## V7
+<img width="1366" height="224" alt="screenshot-2026-02-26_00-34-44" src="https://github.com/user-attachments/assets/b02c6846-f3bd-4c43-8255-678e27ac43d1" />
+<img width="1366" height="212" alt="screenshot-2026-02-26_00-34-01" src="https://github.com/user-attachments/assets/8929585e-682e-4a60-af96-718252016b2d" />
+
+### What's New
+   - New Look (base of V4 with more tweaks, modules and work)
+   - Separated pills style 
+   - custom window.sh to grep active window (no hyprland/window module)
+   - custom clock.sh cause \n not works in waybar to generate 2 lines 
+   - More!
+
+### Cons
+   - <b>Only if you use light theme</b> you need to manually change the color for $esc_bottom in window.sh 
+     ```bash
+           text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
+     <span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
+      ```
+
+---
 ## Adjustment for Laptop Users 
    - Sorry But i am a PC user and cant get my hands on battery, etc modules i try to fake it but it messed up so you need to configure those module by your own Sorry.
 
