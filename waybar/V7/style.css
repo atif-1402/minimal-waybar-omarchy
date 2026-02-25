@@ -41,8 +41,6 @@ window#waybar.empty #window {
     margin: 3.5 3.5px;
     border-radius: 11px;
     background-color: @background;
-    opacity: 0.95;
-    
 }
 
 #workspaces button {
