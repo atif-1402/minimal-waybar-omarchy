@@ -1,0 +1,191 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+  border: none;
+  border-radius: 1;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font Propo';
+  font-size: 12px;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+window#waybar {
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: .5s;
+  border-radius: 32px;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+}
+#waybar.empty .modules-center {
+  opacity: 0;
+}
+
+#workspaces {
+    padding: 0px 10px;
+    margin: 3.5 3.5px;
+    border-radius: 11px;
+    background-color: @background;
+    opacity: 0.95;
+    
+}
+
+#workspaces button {
+  color: @foreground;
+  padding: 0 3px;
+  margin: 0 0.5px;
+  min-width: 9px;
+}
+
+#workspaces button.empty {
+  color: @foreground;
+  opacity: 0.5;
+}
+
+#workspaces button.active {
+  transition: all 50ms ease-out;
+  border-top: 3px solid @foreground;
+  margin-bottom: 2px;
+  color: @foreground;
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  background-color: transparent;
+}
+
+#workspaces button.empty:hover {
+  background: transparent;
+  opacity: 1;
+}
+
+#battery,
+#pulseaudio,
+#custom-screenrecording-indicator,
+#custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#tray {
+  background:alpha(@foreground, 0.0);
+  border-radius: 16px;
+  padding: 0px 5px;
+  margin: 3.5 2px;
+  margin-right: 4px;
+}
+
+#pulseaudio {
+  margin-right: 5px;
+}
+
+#bluetooth {
+  margin-right: 12px;
+}
+
+#idle_inhibitor {
+  margin-right: 9px;
+}
+
+#network {
+  margin-right: 9px;
+}
+
+#custom-gamemode {
+  margin-right: 8px;
+}
+
+#custom-weather {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+tooltip {
+  background: @background;
+  border: 1px solid alpha(@foreground, 0.2);
+  border-radius: 12px;
+}
+tooltip label {
+  color: white;
+}
+
+#custom-clock {
+  margin-left: 7px;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+#custom-active_window {
+    padding: 2px 6px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 14px;
+    background: @background;
+    font-size: 12px;
+}
+
+#custom-update {
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: red;
+}
+
+#custom-omarchy{
+  margin-left: 8px;
+  margin-right: 4px;
+}
+
+#cpu, #memory {
+    margin-left: 0px;
+    font-size: 18px;      
+    padding: 3px 0px;
+}
+
+#group-right1,
+#group_right1,
+#right1 {
+    font-weight: 800;
+    background: @background;
+    padding: 0px 5px;
+    margin: 3.5 2px;
+}
+
+#group-center4,
+#group_center4,
+#center4,
+#group-center3,
+#group_center3,
+#center3,
+#group-center2,
+#group_center2,
+#center2 {
+    font-weight: 800;
+    background: @background;
+    border-radius: 12px;
+    padding: 0px 5px;
+    margin: 3.5 2px;
+}
+
