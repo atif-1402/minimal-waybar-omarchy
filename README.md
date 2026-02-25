@@ -6,9 +6,10 @@
 
 ## Installation
 #### A backup of your current waybar created in ~/.config/waybar.bak.(timestamps) folder
+#### Script become executable automatically no need to hunt chmod +x damn.sh
 #### Just run this command and select the version you want to install (fzf should be installed inorder to run the installer.)    
    ```
-curl -s https://raw.githubusercontent.com/atif-1402/minimal-waybar-themes/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/atif-1402/minimal-waybar-themes/main/install.sh | bash
 ```
 ---
 
@@ -111,11 +112,6 @@ This the V1.5 version of my waybar done somework on it and added more things
 <img width="1366" height="236" alt="image" src="https://github.com/user-attachments/assets/021a4bdb-0e93-4789-a4da-23bb05ff0630" />
 <img width="1366" height="240" alt="image" src="https://github.com/user-attachments/assets/ed1a8a5c-9f39-4d77-8fe4-4490a21896c6" />
 
-### Make the window.sh executable by 
-```
-chmod +x ~/.config/waybar/window.sh
-```
-
 ### What's New
    - New Look
    - Similar to end 4 dots bar
@@ -146,11 +142,6 @@ chmod +x ~/.config/waybar/window.sh
 <img width="1366" height="188" alt="image" src="https://github.com/user-attachments/assets/bead663a-aa9f-4499-bf99-852639def878" />
 <img width="1366" height="179" alt="image" src="https://github.com/user-attachments/assets/1e5c7a18-93af-4ae4-8a4e-8f47a7f00e1b" />
 
-### Make the window.sh executable by 
-```
-chmod +x ~/.config/waybar/window.sh
-```
-
 ### What's New
    - New Look
    - Similar to AxOS bar
@@ -170,11 +161,6 @@ chmod +x ~/.config/waybar/window.sh
 ## V6
 <img width="1366" height="175" alt="screenshot-2026-02-23_15-25-56" src="https://github.com/user-attachments/assets/cb0c1ceb-7463-42d3-ba3f-5e26a4628359" />
 <img width="1366" height="177" alt="screenshot-2026-02-23_15-30-19" src="https://github.com/user-attachments/assets/6178b4f2-0cc6-46c9-8c05-29974b50316e" />
-
-### Make the window.sh executable by 
-```
-chmod +x ~/.config/waybar/window.sh
-```
 
 ### What's New
    - New Look (base of V5 with more tweaks)
