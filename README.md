@@ -10,6 +10,7 @@
    ```
 curl -s https://raw.githubusercontent.com/atif-1402/minimal-waybar-themes/main/install.sh | bash
 ```
+---
 
 ## V1
 This is the first waybar theme version and i try my best to update it and make more themes like this
@@ -31,6 +32,7 @@ This is the first waybar theme version and i try my best to update it and make m
 - To make it work seamlessly you need Nerd Fonts for the play/pause icon in the media
 - Place the media.sh folder in your waybar folder to work
 
+---
 
 ## V1.5
 This the V1.5 version of my waybar done somework on it and added more things
@@ -53,6 +55,8 @@ This the V1.5 version of my waybar done somework on it and added more things
        layerrule = ignorealpha 0.1, waybar
       ```
 
+---
+
 ## V2
  The V2 waybar is based on Minimal and Material UI Theme
  <img width="1366" height="267" alt="image" src="https://github.com/user-attachments/assets/2dd3c353-f4e4-48bc-8158-3214b0b419d5" />
@@ -68,7 +72,9 @@ This the V1.5 version of my waybar done somework on it and added more things
    - better clock
    - better tooltip 
 
-## V2.4
+---
+
+### V2.4
  <img width="1366" height="287" alt="screenshot-2025-12-14_17-43-53" src="https://github.com/user-attachments/assets/902f489f-0760-435a-a41f-2372396f340e" />
  <img width="1366" height="289" alt="screenshot-2025-12-14_17-43-10" src="https://github.com/user-attachments/assets/389554ce-8205-4b8f-b5e5-460fe68dabbc" />
 
@@ -76,6 +82,8 @@ This the V1.5 version of my waybar done somework on it and added more things
    - Changed the workspace module
    - Uses Kanji Characters in Workspace
    - Added ease-in-out transition while switching workspaces 
+
+---
 
 ## V3
  <img width="1366" height="210" alt="screenshot-2025-12-29_23-54-51" src="https://github.com/user-attachments/assets/bfb833ae-41a6-424a-b7cd-5048ac2aff3a" />
@@ -87,6 +95,17 @@ This the V1.5 version of my waybar done somework on it and added more things
    - Bottem Border in workspace with transition
    - More Stats Modules
    - Game Mode (Disable Hyprland Blur & Animations)
+
+---
+
+### V3.xa
+<img width="1366" height="152" alt="screenshot-2026-02-25_23-03-21" src="https://github.com/user-attachments/assets/17609491-47ce-4534-a26e-045515997749" />
+   
+   - Change Normal V3 to a retro style with boxed module
+   - Removed Stats module
+   - added weather module 
+
+---
 
 ## V4
 <img width="1366" height="236" alt="image" src="https://github.com/user-attachments/assets/021a4bdb-0e93-4789-a4da-23bb05ff0630" />
@@ -105,6 +124,8 @@ chmod +x ~/.config/waybar/window.sh
    - custom media module (no mpris)
    - More!
 
+---
+
 ### V4.x
 <img width="1366" height="42" alt="image" src="https://github.com/user-attachments/assets/d54181c4-6023-4eda-9713-eb6a4abd11ea" />
 
@@ -118,6 +139,8 @@ chmod +x ~/.config/waybar/window.sh
            text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
      <span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
       ```
+
+---
 
 ## V5
 <img width="1366" height="188" alt="image" src="https://github.com/user-attachments/assets/bead663a-aa9f-4499-bf99-852639def878" />
@@ -141,6 +164,9 @@ chmod +x ~/.config/waybar/window.sh
            text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
      <span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
       ```
+
+---
+     
 ## V6
 <img width="1366" height="175" alt="screenshot-2026-02-23_15-25-56" src="https://github.com/user-attachments/assets/cb0c1ceb-7463-42d3-ba3f-5e26a4628359" />
 <img width="1366" height="177" alt="screenshot-2026-02-23_15-30-19" src="https://github.com/user-attachments/assets/6178b4f2-0cc6-46c9-8c05-29974b50316e" />
@@ -164,6 +190,8 @@ chmod +x ~/.config/waybar/window.sh
            text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
      <span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
       ```
+
+---
 
 ## Adjustment for Laptop Users 
    - Sorry But i am a PC user and cant get my hands on battery, etc modules i try to fake it but it messed up so you need to configure those module by your own Sorry.
