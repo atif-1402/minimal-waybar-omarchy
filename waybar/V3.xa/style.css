@@ -1,0 +1,160 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+  background-color: alpha(@background, 0.9);
+  color: @foreground;
+
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font Propo';
+  font-size: 12px;
+  border: 0px solid alpha(@foreground, 0.6)
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces {
+  margin: 3px 2px 3px 3px;
+  border: 1px solid alpha(@foreground, 0.6);
+  transition: all 150ms ease-in-out;
+}
+
+#workspaces button {
+  all: initial;
+  transition: all 90ms ease-in-out;  
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+  border-radius: 0px;
+  border: 0px solid alpha(@foreground, 0.6);
+  border-bottom-width: 2px;
+}
+
+#workspaces button.empty {
+  transition: all 90ms ease-in-out;
+  opacity: 0.5;
+}
+
+#workspaces button.empty:hover {
+  transition: all 90ms ease-in-out;
+  opacity: 0.8;
+}
+
+#workspaces button:hover,
+#workspaces button.active {
+  transition: all 90ms ease-in-out;
+  border-radius: 0px;
+  border: 0px solid alpha(@foreground, 0.64);
+  border-bottom-width: 3px;
+}
+
+#cpu,
+#idle_inhibitor,
+#battery,
+#custom-screenrecording-indicator,
+#custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#custom-gamemode {
+  margin-left: 2px;
+  margin-right: 8px;
+}
+
+#pulseaudio {
+  margin-right: -4px;
+  margin-left: 1px;
+}
+
+#tray {
+  margin-right: 4px;
+}
+
+#bluetooth {
+  margin-right: 5px;
+  margin-left: 3px;
+}
+
+#network {
+  margin-right: 10px;
+  margin-left: 6px;
+}
+
+#custom-expand-icon {
+  margin-right: 10px;
+}
+
+tooltip {
+  padding: 2px;
+  border: 1px solid @foreground;
+}
+
+#custom-update {
+  font-size: 10px;
+}
+
+#clock {
+  border: 1px solid alpha(@foreground, 0.6);
+  border-bottom-width: 2px;
+  font-weight: 600;
+  padding: 0px 5px;
+  margin: 3.5 3.5px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #ff0000;
+}
+
+#custom-omarchy {
+  border: 1px solid alpha(@foreground, 0.6);
+  border-bottom-width: 2px;
+  background-color: alpha(@foreground, 0.01);
+  min-width: 24px;
+  margin: 3px 3px 3px 0px;
+}
+
+#custom-omarchy:hover {
+  border-bottom: 3px solid alpha(@foreground, 0.8);
+}
+
+#mpris {
+  border: 1px solid alpha(@foreground, 0.6);
+  border-bottom-width: 2px;
+  font-weight: 600;
+  padding: 0px 5px;
+  margin: 3.5 3.5px;
+}
+
+#custom-weather {
+  font-size: 14px;
+}
+
+#group-right2,
+#group_right2,
+#right2,
+#group-right,
+#group_right,
+#right {
+  border: 1px solid alpha(@foreground, 0.6);
+  border-bottom-width: 2px;
+  font-weight: 800;
+  padding: 0px 5px;
+  margin: 3.5 3.5px;
+}
