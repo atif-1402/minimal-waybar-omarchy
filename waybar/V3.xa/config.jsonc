@@ -177,13 +177,11 @@
   },
 "custom/weather": {
   "exec": "bash -c '
-CITY=\"Bhopal\"
+data=$(curl -s --connect-timeout 5 \"wttr.in/?format=j1\")
 
-data=$(curl -s --connect-timeout 5 \"wttr.in/${CITY}?format=j1\")
-
-# Check if curl failed
+# If request failed or invalid JSON
 if [ -z \"$data\" ] || ! echo \"$data\" | jq empty 2>/dev/null; then
-  echo \"{\\\"text\\\":\\\"󰖐 N/A\\\",\\\"tooltip\\\":\\\"Weather unavailable\\\"}\"
+  jq -n \"{text: \\\"󰖐 N/A\\\", tooltip: \\\"Weather unavailable\\\"}\"
   exit 0
 fi
 
@@ -195,16 +193,19 @@ wind=$(echo \"$data\" | jq -r \".current_condition[0].windspeedKmph\")
 desc=$(echo \"$data\" | jq -r \".current_condition[0].weatherDesc[0].value\")
 
 case $code in
-  113) icon=\"󰖙\" ;;  # Sunny
-  116) icon=\"󰖕\" ;;  # Partly cloudy
-  119) icon=\"󰖐\" ;;  # Cloudy
-  176) icon=\"󰖗\" ;;  # Light rain
-  296) icon=\"󰖖\" ;;  # Rain
-  200) icon=\"󰖓\" ;;  # Thunder
+  113) icon=\"󰖙\" ;;   # Sunny
+  116) icon=\"󰖕\" ;;   # Partly cloudy
+  119) icon=\"󰖐\" ;;   # Cloudy
+  176) icon=\"󰖗\" ;;   # Light rain
+  296) icon=\"󰖖\" ;;   # Rain
+  200) icon=\"󰖓\" ;;   # Thunder
   *)   icon=\"󰖐\" ;;
 esac
 
-echo \"{\\\"text\\\":\\\"$icon  $temp°C\\\",\\\"tooltip\\\":\\\"$icon  $desc\\n󰔏  $temp°C (Feels $feels°C)\\n󰖎  $humidity%\\n󰖛  $wind km/h\\\"}\"
+jq -n \
+  --arg text \"$icon  $temp°C\" \
+  --arg tooltip \"$icon  $desc\n󰔏  $temp°C (Feels $feels°C)\n󰖎  $humidity%\n󰖛  $wind km/h\" \
+  \"{text: \\$text, tooltip: \\$tooltip}\"
 '",
   "interval": 900,
   "return-type": "json"
