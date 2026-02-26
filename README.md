@@ -190,6 +190,9 @@ This the V1.5 version of my waybar done somework on it and added more things
    - custom clock.sh cause \n not works in waybar to generate 2 lines 
    - More!
 
+### Sorry guys forget to add bt & network module updated now
+<img width="1366" height="58" alt="image" src="https://github.com/user-attachments/assets/8f1af805-d1e5-4c0b-bc6c-6bc67b2069d9" />
+
 ### Cons
    - <b>Only if you use light theme</b> you need to manually change the color for $esc_bottom in window.sh 
      ```bash
