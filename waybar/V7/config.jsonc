@@ -51,6 +51,8 @@
     "custom/separator#blank",
     "custom/separator#dot",
     "tray",
+    "network",
+    "bluetooth"
 	]
 },
 
