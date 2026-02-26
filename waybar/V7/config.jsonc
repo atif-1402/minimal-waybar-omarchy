@@ -115,7 +115,7 @@
 },
 
 "custom/clock": {
-    "exec": "/home/atif/.config/waybar/clock.sh",
+    "exec": "~/.config/waybar/clock.sh",
     "interval": 1,
     "return-type": "json",
     "tooltip": false
