@@ -175,11 +175,40 @@
         "deactivated": "󰾪"
     }
   },
-  "custom/weather": {
-    "exec": "bash -c 'data=$(curl -s wttr.in/?format=j1); code=$(echo $data | jq -r \".current_condition[0].weatherCode\"); case $code in 113) icon=\"󰖙\" ;; 116) icon=\"󰖕\" ;; 119) icon=\"󰖐\" ;; 176) icon=\"󰖗\" ;; 296) icon=\"󰖖\" ;; 200) icon=\"󰖓\" ;; *) icon=\"󰖐\" ;; esac; temp=$(echo $data | jq -r \".current_condition[0].temp_C\"); feels=$(echo $data | jq -r \".current_condition[0].FeelsLikeC\"); humidity=$(echo $data | jq -r \".current_condition[0].humidity\"); wind=$(echo $data | jq -r \".current_condition[0].windspeedKmph\"); desc=$(echo $data | jq -r \".current_condition[0].weatherDesc[0].value\"); echo \"{\\\"text\\\":\\\"$icon\\\",\\\"tooltip\\\":\\\"$icon  $desc\\n󰔏  $temp°C (Feels $feels°C)\\n󰖎  $humidity%\\n󰖛  $wind km/h\\\"}\"'",
-    "interval": 900,
-    "return-type": "json"
-  },
+"custom/weather": {
+  "exec": "bash -c '
+CITY=\"Bhopal\"
+
+data=$(curl -s --connect-timeout 5 \"wttr.in/${CITY}?format=j1\")
+
+# Check if curl failed
+if [ -z \"$data\" ] || ! echo \"$data\" | jq empty 2>/dev/null; then
+  echo \"{\\\"text\\\":\\\"󰖐 N/A\\\",\\\"tooltip\\\":\\\"Weather unavailable\\\"}\"
+  exit 0
+fi
+
+code=$(echo \"$data\" | jq -r \".current_condition[0].weatherCode\")
+temp=$(echo \"$data\" | jq -r \".current_condition[0].temp_C\")
+feels=$(echo \"$data\" | jq -r \".current_condition[0].FeelsLikeC\")
+humidity=$(echo \"$data\" | jq -r \".current_condition[0].humidity\")
+wind=$(echo \"$data\" | jq -r \".current_condition[0].windspeedKmph\")
+desc=$(echo \"$data\" | jq -r \".current_condition[0].weatherDesc[0].value\")
+
+case $code in
+  113) icon=\"󰖙\" ;;  # Sunny
+  116) icon=\"󰖕\" ;;  # Partly cloudy
+  119) icon=\"󰖐\" ;;  # Cloudy
+  176) icon=\"󰖗\" ;;  # Light rain
+  296) icon=\"󰖖\" ;;  # Rain
+  200) icon=\"󰖓\" ;;  # Thunder
+  *)   icon=\"󰖐\" ;;
+esac
+
+echo \"{\\\"text\\\":\\\"$icon  $temp°C\\\",\\\"tooltip\\\":\\\"$icon  $desc\\n󰔏  $temp°C (Feels $feels°C)\\n󰖎  $humidity%\\n󰖛  $wind km/h\\\"}\"
+'",
+  "interval": 900,
+  "return-type": "json"
+},
   "mpris": {
 	  "interval": 10,
 	  "format": "{player_icon} {dynamic}",
