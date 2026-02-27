@@ -71,7 +71,13 @@
 }
 
 #bluetooth {
-  margin-right: 17px;
+  margin-right: 2px;
+}
+
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  margin-right: 2px;
+  min-width: 15px;
 }
 
 #network {

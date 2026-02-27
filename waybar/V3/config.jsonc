@@ -17,7 +17,8 @@
     "custom/screenrecording-indicator",
     "custom/update",
     "custom/gamemode",
-    "idle_inhibitor",
+    "custom/idle-indicator",
+    "custom/notification-silencing-indicator",
     "custom/sep",
     "bluetooth",
     "network",
@@ -172,12 +173,19 @@
     "tooltip": true,
     "tooltip-format": "GameMode"
   },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-        "activated": "",
-        "deactivated": ""
-    }
+
+  "custom/idle-indicator": {
+    "on-click": "omarchy-toggle-idle",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+    "signal": 9,
+    "return-type": "json"
+  },
+  
+  "custom/notification-silencing-indicator": {
+    "on-click": "omarchy-toggle-notification-silencing",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
+    "signal": 10,
+    "return-type": "json"
   },
 
   "mpris": {

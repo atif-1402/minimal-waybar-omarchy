@@ -32,9 +32,9 @@
     "custom/screenrecording-indicator",
     "custom/update",
     "custom/gamemode",
-    "custom/weather",
-    "idle_inhibitor",
-	]
+    "custom/idle-indicator",
+    "custom/notification-silencing-indicator",
+  ]
   },
 
   "hyprland/workspaces": {
@@ -168,16 +168,16 @@
     "tooltip": true,
     "tooltip-format": "GameMode"
   },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-        "activated": "󰅶",
-        "deactivated": "󰾪"
-    }
+  "custom/idle-indicator": {
+    "on-click": "omarchy-toggle-idle",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+    "signal": 9,
+    "return-type": "json"
   },
-  "custom/weather": {
-    "exec": "bash -c 'data=$(curl -s wttr.in/?format=j1); code=$(echo $data | jq -r \".current_condition[0].weatherCode\"); case $code in 113) icon=\"󰖙\" ;; 116) icon=\"󰖕\" ;; 119) icon=\"󰖐\" ;; 176) icon=\"󰖗\" ;; 296) icon=\"󰖖\" ;; 200) icon=\"󰖓\" ;; *) icon=\"󰖐\" ;; esac; temp=$(echo $data | jq -r \".current_condition[0].temp_C\"); feels=$(echo $data | jq -r \".current_condition[0].FeelsLikeC\"); humidity=$(echo $data | jq -r \".current_condition[0].humidity\"); wind=$(echo $data | jq -r \".current_condition[0].windspeedKmph\"); desc=$(echo $data | jq -r \".current_condition[0].weatherDesc[0].value\"); echo \"{\\\"text\\\":\\\"$icon\\\",\\\"tooltip\\\":\\\"$icon  $desc\\n󰔏  $temp°C (Feels $feels°C)\\n󰖎  $humidity%\\n󰖛  $wind km/h\\\"}\"'",
-    "interval": 900,
+  "custom/notification-silencing-indicator": {
+    "on-click": "omarchy-toggle-notification-silencing",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
+    "signal": 10,
     "return-type": "json"
   },
   "mpris": {

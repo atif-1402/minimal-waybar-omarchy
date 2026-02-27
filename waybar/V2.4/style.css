@@ -96,12 +96,14 @@ window#waybar.empty #window {
   margin-right: 1px;
 }
 
-#bluetooth {
-  margin-right: 6px;
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  margin-right: 2px;
+  min-width: 15px;
 }
 
-#idle_inhibitor {
-  margin-right: 9px;
+#bluetooth {
+  margin-right: 8px;
 }
 
 #network {

@@ -114,8 +114,10 @@ window#waybar.empty #window {
   margin-right: 12px;
 }
 
-#idle_inhibitor {
-  margin-right: 9px;
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  margin-right: 2px;
+  min-width: 15px;
 }
 
 #network {
@@ -124,11 +126,6 @@ window#waybar.empty #window {
 
 #custom-gamemode {
   margin-right: 8px;
-}
-
-#custom-weather {
-  font-size: 14px;
-  margin-right: 10px;
 }
 
 tooltip {

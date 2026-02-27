@@ -21,8 +21,8 @@
 	"modules": [
     "clock",
     "custom/gamemode",
-    "custom/weather",
-    "idle_inhibitor",
+    "custom/idle-indicator",
+    "custom/notification-silencing-indicator",
     "custom/screenrecording-indicator", 
     "custom/update", 
 	]
@@ -211,13 +211,19 @@
 	  "tooltip": false
 },
 
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-        "activated": "󰅶",
-        "deactivated": "󰾪"
-    }
-},
+  "custom/idle-indicator": {
+    "on-click": "omarchy-toggle-idle",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+    "signal": 9,
+    "return-type": "json"
+  },
+  
+  "custom/notification-silencing-indicator": {
+    "on-click": "omarchy-toggle-notification-silencing",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
+    "signal": 10,
+    "return-type": "json"
+  },
 
   "custom/update": {
     "format": "",
@@ -228,12 +234,6 @@
     "interval": 21600
   },
 
-"custom/weather": {
-  "exec": "bash -c 'data=$(curl -s wttr.in/?format=j1); code=$(echo $data | jq -r \".current_condition[0].weatherCode\"); case $code in 113) icon=\"󰖙\" ;; 116) icon=\"󰖕\" ;; 119) icon=\"󰖐\" ;; 176) icon=\"󰖗\" ;; 296) icon=\"󰖖\" ;; 200) icon=\"󰖓\" ;; *) icon=\"󰖐\" ;; esac; temp=$(echo $data | jq -r \".current_condition[0].temp_C\"); feels=$(echo $data | jq -r \".current_condition[0].FeelsLikeC\"); humidity=$(echo $data | jq -r \".current_condition[0].humidity\"); wind=$(echo $data | jq -r \".current_condition[0].windspeedKmph\"); desc=$(echo $data | jq -r \".current_condition[0].weatherDesc[0].value\"); echo \"{\\\"text\\\":\\\"$icon\\\",\\\"tooltip\\\":\\\"$icon  $desc\\n󰔏  $temp°C (Feels $feels°C)\\n󰖎  $humidity%\\n󰖛  $wind km/h\\\"}\"'",
-  "interval": 900,
-  "return-type": "json"
-},
-
   "custom/gamemode": {
     "exec": "test -f ~/.cache/hypr_gamemode && echo '{\"text\":\"\"}' || echo '{\"text\":\"\"}'",
     "on-click": "test -f ~/.cache/hypr_gamemode && (rm ~/.cache/hypr_gamemode && hyprctl keyword animations:enabled 1 && hyprctl keyword decoration:blur:enabled 1) || (touch ~/.cache/hypr_gamemode && hyprctl keyword animations:enabled 0 && hyprctl keyword decoration:blur:enabled 0)",
@@ -242,17 +242,5 @@
     "tooltip": true,
     "tooltip-format": "GameMode"
   },
-
-  "group/ctl": {
-	"orientation": "inherit",
-	"modules": [
-    "custom/screenrecording-indicator", 
-    "custom/separator#blank",
-    "bluetooth",
-    "network",
-    "pulseaudio",
-    "battery",
-	]
-},
 
 }

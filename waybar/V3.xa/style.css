@@ -60,12 +60,17 @@
 }
 
 #cpu,
-#idle_inhibitor,
 #battery,
 #custom-screenrecording-indicator,
 #custom-update {
   min-width: 12px;
   margin: 0 7.5px;
+}
+
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  margin-right: 2px;
+  min-width: 15px;
 }
 
 #custom-gamemode {
@@ -145,10 +150,6 @@ tooltip {
   font-weight: 600;
   padding: 0px 5px;
   margin: 3.5 3.5px;
-}
-
-#custom-weather {
-  font-size: 14px;
 }
 
 #group-right2,

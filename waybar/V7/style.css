@@ -96,10 +96,6 @@ window#waybar.empty #window {
   margin-right: 12px;
 }
 
-#idle_inhibitor {
-  margin-right: 9px;
-}
-
 #network {
   margin-right: 9px;
 }
@@ -108,9 +104,10 @@ window#waybar.empty #window {
   margin-right: 8px;
 }
 
-#custom-weather {
-  font-size: 14px;
-  margin-right: 10px;
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  margin-right: 2px;
+  min-width: 15px;
 }
 
 tooltip {

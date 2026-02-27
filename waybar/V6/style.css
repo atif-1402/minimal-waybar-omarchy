@@ -159,6 +159,12 @@ tooltip label {
   font-size: 10px;
 }
 
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  margin-right: 2px;
+  min-width: 15px;
+}
+
 .hidden {
   opacity: 0;
 }
