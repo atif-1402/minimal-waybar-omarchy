@@ -4,46 +4,74 @@ MAX_TITLE_LEN=20
 
 print_status() {
     window=$(hyprctl activewindow -j 2>/dev/null)
-    address=$(echo "$window" | jq -r '.address // empty')
+    address=$(jq -r '.address // empty' <<< "$window")
 
-    if [[ -n "$address" && "$address" != "null" ]]; then
-        class=$(echo "$window" | jq -r '.class // "Unknown"')
-        title=$(echo "$window" | jq -r '.title // ""')
+    # No active window → show Desktop + Workspace
+    if [[ -z "$address" || "$address" == "null" ]]; then
+        ws=$(hyprctl activeworkspace -j | jq -r '.id')
 
-        app_class=$(echo "$class" | tr '[:upper:]' '[:lower:]')
+        top_line="Desktop"
+        bottom_line="Workspace $ws"
 
-        if [[ "$app_class" == *discord* || "$app_class" == *vesktop* ]]; then
-            title=$(echo "$title" | sed -E 's/^\([0-9]+\)[[:space:]]*//')
-            title=$(echo "$title" | sed -E 's/^Discord[[:space:]]*\|[[:space:]]*//')
-        fi
+        esc_top=$(sed 's/&/&amp;/g; s/</&lt;/g; s/>/&gt;/g' <<< "$top_line")
+        esc_bottom=$(sed 's/&/&amp;/g; s/</&lt;/g; s/>/&gt;/g' <<< "$bottom_line")
 
-        if [ ${#title} -gt $MAX_TITLE_LEN ]; then
-            title="${title:0:$((MAX_TITLE_LEN-3))}..."
-        fi
+        text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
+<span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
 
-        # SWAPPED
-        top_line="$class"
-        bottom_line="$title"
+        jq -nc \
+            --arg text "$text" \
+            --arg tooltip "$bottom_line" \
+            '{ text: $text, class: "custom-window", tooltip: $tooltip }'
+        return
+    fi
 
-else
-    # Hide module completely on empty workspace
-    jq -nc '{ text: "", class: "custom-window", tooltip: "" }'
-    return
-fi
+    class=$(jq -r '.class // "Unknown"' <<< "$window")
+    title=$(jq -r '.title // ""' <<< "$window")
 
-    esc_top=$(printf '%s\n' "$top_line" | sed 's/&/&amp;/g; s/</&lt;/g; s/>/&gt;/g')
-    esc_bottom=$(printf '%s\n' "$bottom_line" | sed 's/&/&amp;/g; s/</&lt;/g; s/>/&gt;/g')
+    app_class="${class,,}"
+
+    # Discord / Vesktop cleanup
+    if [[ "$app_class" == *discord* || "$app_class" == *vesktop* ]]; then
+        title=$(sed -E 's/^\([0-9]+\)[[:space:]]*//' <<< "$title")
+        title=$(sed -E 's/^Discord[[:space:]]*\|[[:space:]]*//' <<< "$title")
+    fi
+
+    # Truncate title
+    if (( ${#title} > MAX_TITLE_LEN )); then
+        title="${title:0:$((MAX_TITLE_LEN-3))}..."
+    fi
+
+    esc_top=$(sed 's/&/&amp;/g; s/</&lt;/g; s/>/&gt;/g' <<< "$class")
+    esc_bottom=$(sed 's/&/&amp;/g; s/</&lt;/g; s/>/&gt;/g' <<< "$title")
 
     text="<span size='7500' foreground='#a6adc8' rise='-2000'>$esc_top</span>
 <span size='9000' weight='bold' foreground='#ffffff'>$esc_bottom</span>"
 
+    tooltip="$class: $title"
+
     jq -nc \
         --arg text "$text" \
-        --arg tooltip "$top_line: $bottom_line" \
+        --arg tooltip "$tooltip" \
         '{ text: $text, class: "custom-window", tooltip: $tooltip }'
 }
 
+# Initial output
+print_status
+
+last=""
+
+# Update only when state changes
 while true; do
-    print_status
-    sleep 0.2
+    current_window=$(hyprctl activewindow -j 2>/dev/null)
+    current_ws=$(hyprctl activeworkspace -j 2>/dev/null)
+
+    current="$current_window$current_ws"
+
+    if [[ "$current" != "$last" ]]; then
+        print_status
+        last="$current"
+    fi
+
+    sleep 0.5
 done
