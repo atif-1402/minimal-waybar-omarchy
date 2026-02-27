@@ -104,7 +104,7 @@ This the V1.5 version of my waybar done somework on it and added more things
    
    - Change Normal V3 to a retro style with boxed module
    - Removed Stats module
-   - added weather module 
+   - <del>added weather module</del>
 
 ---
 
@@ -116,7 +116,7 @@ This the V1.5 version of my waybar done somework on it and added more things
    - New Look
    - Similar to end 4 dots bar
    - custom window.sh to grep active window (no hyprland/window module)
-   - weather module automatically set location by your IP
+   - <del> weather module automatically set location by your IP </del> 
    - custom media module (no mpris)
    - More!
 
