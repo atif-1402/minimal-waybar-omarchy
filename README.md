@@ -7,7 +7,7 @@
 ## Installation
 #### A backup of your current waybar created in ~/.config/waybar.bak.(timestamps) folder
 #### Script become executable automatically no need to hunt chmod +x damn.sh
-#### Just run this command and select the version you want to install (fzf should be installed inorder to run the installer.)    
+#### Just run this command and select the version you want to install (gum should be installed inorder to run the installer.)    
    ```
 curl -fsSL https://raw.githubusercontent.com/atif-1402/minimal-waybar-themes/main/install.sh | bash
 ```
