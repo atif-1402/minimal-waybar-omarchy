@@ -33,7 +33,7 @@ gum style --border rounded --padding "1 4" --align center \
 "Waybar Theme Installer"
 
 echo
-gum style "This will install a Waybar themes by atif-1402 on your system."
+gum style "This will install a Waybar theme by atif-1402 on your system."
 echo
 
 # ===== Step 1 =====
