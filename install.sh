@@ -1,66 +1,122 @@
 #!/usr/bin/env bash
 
-set -e
-
-echo "== Minimal Waybar Installer =="
+set -euo pipefail
 
 REPO="https://github.com/atif-1402/minimal-waybar-themes.git"
+CONFIG_DIR="$HOME/.config/waybar"
+TMP_DIR=$(mktemp -d)
 
-# Check git
-command -v git >/dev/null 2>&1 || { echo "git not found."; exit 1; }
+# ===== Cleanup temp folder =====
+cleanup() {
+    rm -rf "$TMP_DIR" 2>/dev/null || true
+}
+trap cleanup EXIT INT TERM
 
-# Check fzf
-if ! command -v fzf >/dev/null 2>&1; then
-    if command -v pacman >/dev/null 2>&1; then
-        sudo pacman -S --noconfirm fzf >/dev/null 2>&1
-    elif command -v apt >/dev/null 2>&1; then
-        sudo apt update >/dev/null 2>&1
-        sudo apt install -y fzf >/dev/null 2>&1
-    else
-        echo "fzf not found. Install manually."
+# ===== Dependency Check =====
+for cmd in git gum; do
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+        echo
+        echo "Missing dependency: $cmd"
+        echo
+        echo "This is required to run the Waybar Theme Installer interface."
+        echo "Please install it before continuing."
+        echo
+        echo "Example (Arch Linux): sudo pacman -S $cmd"
+        echo
         exit 1
     fi
-fi
+done
 
-tmp=$(mktemp -d)
+clear
 
-echo "Cloning repository..."
-git clone --depth 1 "$REPO" "$tmp" >/dev/null 2>&1
+gum style --border rounded --padding "1 4" --align center \
+"Waybar Theme Installer"
 
-if [ ! -d "$tmp/waybar" ]; then
-    rm -rf "$tmp"
-    echo "Invalid repository structure."
+echo
+gum style "This will install a Waybar themes by atif-1402 on your system."
+echo
+
+# ===== Step 1 =====
+gum style --foreground 212 "Step 1/4 — Downloading theme list..."
+
+gum spin --spinner dot --title "Cloning repository..." -- \
+    git clone --depth 1 "$REPO" "$TMP_DIR" >/dev/null 2>&1
+
+if [ ! -d "$TMP_DIR/waybar" ]; then
+    gum style --foreground 1 "Error: Could not fetch themes."
     exit 1
 fi
 
-ver=$(find "$tmp/waybar" -mindepth 1 -maxdepth 1 -type d -printf "%f\n" | sort | fzf --prompt="Select Waybar Version > ")
+# ===== Step 2 =====
+gum style --foreground 212 "Step 2/4 — Choose a theme"
 
-[ -z "$ver" ] && rm -rf "$tmp" && exit 0
+THEMES=$(find "$TMP_DIR/waybar" \
+    -mindepth 1 -maxdepth 1 -type d -printf "%f\n" | sort -V)
 
-if [ -d "$HOME/.config/waybar" ]; then
-    echo "Backing up existing Waybar config..."
-    mv "$HOME/.config/waybar" "$HOME/.config/waybar.backup.$(date +%s)"
+COUNT=$(echo "$THEMES" | wc -l)
+
+theme=$(printf "%s\n" $THEMES | \
+    gum choose --header "$COUNT themes available (scroll to view more)")
+
+[ -z "$theme" ] && exit 0
+
+# ===== Step 3 =====
+gum style --foreground 212 "Step 3/4 — Installing $theme"
+
+BACKUP_CREATED="no"
+
+if [ -d "$CONFIG_DIR" ]; then
+    BACKUP="$HOME/.config/waybar.backup.$(date +%s)"
+    mv "$CONFIG_DIR" "$BACKUP"
+    BACKUP_CREATED="yes"
 fi
 
-mkdir -p "$HOME/.config/waybar"
-cp -rf "$tmp/waybar/$ver/." "$HOME/.config/waybar"
+mkdir -p "$CONFIG_DIR"
 
-echo "Installed version: $ver"
+gum spin --spinner dot --title "Copying files..." -- \
+    cp -rf "$TMP_DIR/waybar/$theme/." "$CONFIG_DIR"
 
-# Detect and make scripts executable
-if find "$HOME/.config/waybar" -type f -name "*.sh" | grep -q .; then
-    find "$HOME/.config/waybar" -type f -name "*.sh" -exec chmod +x {} \;
-    echo "Scripts detected and made executable."
-fi
+# Detect scripts
+SCRIPT_COUNT=$(find "$CONFIG_DIR" -type f -name "*.sh" | wc -l)
 
-rm -rf "$tmp"
-
-# Restart Waybar silently
-if command -v omarchy-restart-waybar >/dev/null 2>&1; then
-    omarchy-restart-waybar >/dev/null 2>&1
+if [ "$SCRIPT_COUNT" -gt 0 ]; then
+    find "$CONFIG_DIR" -type f -name "*.sh" -exec chmod +x {} \;
+    SCRIPTS_MESSAGE="Detected $SCRIPT_COUNT script file(s) and made them executable."
 else
-    pkill waybar >/dev/null 2>&1 || true
+    SCRIPTS_MESSAGE="No scripts detected in this theme. You are good to go!."
+fi
+
+# ===== Step 4 =====
+gum style --foreground 212 "Step 4/4 — Restarting Waybar"
+
+# Kill safely
+pkill -x waybar 2>/dev/null || true
+sleep 0.5
+
+# Restart properly depending on compositor
+if command -v hyprctl >/dev/null 2>&1; then
+    hyprctl dispatch exec waybar >/dev/null 2>&1
+else
     nohup waybar >/dev/null 2>&1 &
 fi
 
-echo "Installation complete!"
+echo
+
+FINAL_MESSAGE="Theme '$theme' installed successfully."
+
+if [ "$BACKUP_CREATED" = "yes" ]; then
+    FINAL_MESSAGE="$FINAL_MESSAGE
+
+A backup of your previous configuration was created at:
+
+$BACKUP"
+fi
+
+FINAL_MESSAGE="$FINAL_MESSAGE
+
+$SCRIPTS_MESSAGE"
+
+gum style --border rounded --padding "1 3" "$FINAL_MESSAGE"
+
+echo
+read -p "Press Enter to exit..."
