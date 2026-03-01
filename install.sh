@@ -30,7 +30,12 @@ done
 clear
 
 gum style --border rounded --padding "1 4" --align center \
-"Waybar Theme Installer"
+"                                                                                 
+                                                                                 
+██     ██  ▄▄▄  ▄▄ ▄▄ ▄▄▄▄   ▄▄▄  ▄▄▄▄    ██████ ▄▄ ▄▄ ▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄  ▄▄▄▄ 
+██ ▄█▄ ██ ██▀██ ▀███▀ ██▄██ ██▀██ ██▄█▄     ██   ██▄██ ██▄▄  ██▀▄▀██ ██▄▄  ███▄▄ 
+ ▀██▀██▀  ██▀██   █   ██▄█▀ ██▀██ ██ ██     ██   ██ ██ ██▄▄▄ ██   ██ ██▄▄▄ ▄▄██▀ 
+                                           by atif-1402                                      "
 
 echo
 gum style "This will install a Waybar theme by atif-1402 on your system."
