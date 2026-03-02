@@ -5,12 +5,12 @@
 - Aside from that, they use standard modules so they can be used on any distro by simply removing the Omarchy modules and set your own color scheme.
 
 ## Installation
-#### A backup of your current waybar created in ~/.config/waybar.bak.(timestamps) folder
-#### Script become executable automatically no need to hunt chmod +x damn.sh
 #### Just run this command and select the version you want to install (gum should be installed inorder to run the installer.)    
    ```
 curl -fsSL https://raw.githubusercontent.com/atif-1402/minimal-waybar-themes/main/install.sh | bash
 ```
+#### Backup of your current waybar created in ~/.config/waybar.bak.(timestamps) folder automatically via install.sh
+#### Script become executable automatically no need to hunt chmod +x damn.sh
 ---
 
 ## V1
@@ -99,12 +99,24 @@ This the V1.5 version of my waybar done somework on it and added more things
 
 ---
 
-### V3.xa
+## V3.xa
 <img width="1366" height="152" alt="screenshot-2026-02-25_23-03-21" src="https://github.com/user-attachments/assets/17609491-47ce-4534-a26e-045515997749" />
-   
+
+### What's New
    - Change Normal V3 to a retro style with boxed module
    - Removed Stats module
    - <del>added weather module</del>
+
+---
+
+## V3.Ω
+<img width="1366" height="178" alt="image" src="https://github.com/user-attachments/assets/68a4ccbc-06e2-4761-8771-c392c2cff811" />
+
+### What's New
+   - Added a scrollable stats module <b>⊹ (Scroll on Stats Module to switch the Stats) ⊹</b>
+   - Custom Workspaces script use for workspaces module
+   - all icon related modules in the misc-expander module
+   - Base of V3 highly tweaked and customized
 
 ---
 
@@ -122,9 +134,10 @@ This the V1.5 version of my waybar done somework on it and added more things
 
 ---
 
-### V4.x
+## V4.x
 <img width="1366" height="42" alt="image" src="https://github.com/user-attachments/assets/d54181c4-6023-4eda-9713-eb6a4abd11ea" />
 
+### What's New
    - Adjusted Workspaces and added transition
    - Added Gamemode
    - Cons are still same (working on it)
