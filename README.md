@@ -82,7 +82,19 @@ This the V1.5 version of my waybar done somework on it and added more things
 ### What's New
    - Changed the workspace module
    - Uses Kanji Characters in Workspace
-   - Added ease-in-out transition while switching workspaces 
+   - Added ease-in-out transition while switching workspaces
+
+---
+
+### V2.4
+<img width="1366" height="183" alt="image" src="https://github.com/user-attachments/assets/2a89ca6b-9b9e-4827-9f16-f7407db556cc" />
+<img width="1366" height="182" alt="image" src="https://github.com/user-attachments/assets/a783b945-22ee-4f53-9a9f-762adfff4951" />
+
+### What's New
+   - Changed the workspace module and styling thanks to this [reddit guy](https://www.reddit.com/user/its_me_gentle_man/)
+   - Added a power profile daemon module
+   - Changed stats module
+   - <b> [@OldJobobo](https://github.com/OldJobobo)'s new omarchy template is used to generate more colors for waybar. Make sure to install this Omarchy Users [here](https://github.com/OldJobobo/oldjobobo-custom-omarchy-templates) </b>
 
 ---
 
