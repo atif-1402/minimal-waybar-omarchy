@@ -1,0 +1,284 @@
+/*  █████  ████████ ██ ███████        ██ ██   ██  ██████  ██████   */
+/* ██   ██    ██    ██ ██            ███ ██   ██ ██  ████      ██  */
+/* ███████    ██    ██ █████   █████  ██ ███████ ██ ██ ██  █████   */
+/* ██   ██    ██    ██ ██             ██      ██ ████  ██ ██       */
+/* ██   ██    ██    ██ ██             ██      ██  ██████  ███████  */
+
+@import "../omarchy/current/theme/waybar.css";
+@import "../omarchy/current/theme/colors.css";
+
+/* ======================
+   GLOBAL
+====================== */
+
+* {
+  border: none;
+  min-height: 0;
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 12px;
+}
+
+window#waybar {
+  background-color: transparent;
+  transition: background-color 0.5s ease;
+}
+
+.modules-left {
+  margin-left: 0px;
+}
+
+.modules-right {
+  padding-top: 1px;
+  margin-right: 0px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+/* ======================
+   EMPTY STATE
+====================== */
+
+window#waybar.empty #window {
+  background: transparent;
+  border-radius: 0;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#waybar.empty .modules-center {
+  opacity: 0;
+}
+
+/* ======================
+   WORKSPACES
+====================== */
+
+#workspaces {
+  padding: 0 5px;
+  margin: 0.5px 0.5px;
+  border-radius: 16px;
+}
+
+#workspaces button {
+  padding: 0 12px;
+  margin: 0 1px;
+  background-color: @background;
+  color: @foreground;
+  border-radius: 4px;
+  transition: all 250ms ease;
+}
+
+#workspaces button:hover {
+  background: @foreground;
+  color: @background;
+  border-radius: 12px;
+  transition: all 0.1s ease;
+}
+
+#workspaces button.active {
+  background-color: @foreground;
+  color: @background;
+  margin: 0 2px;
+  min-width: 32px;
+  font-weight: bold;
+}
+
+#workspaces button.empty {
+  color: alpha(@foreground, 0.5);
+  background-color: @background;
+}
+
+#workspaces button:first-child {
+  border-radius: 16px 4px 4px 16px;
+}
+
+#workspaces button:last-child {
+  border-radius: 4px 16px 16px 4px;
+}
+
+/* ======================
+   MODULE GROUPS
+====================== */
+
+#group-misc, 
+#group_misc, 
+#misc, 
+#group-ctl, 
+#group_ctl, 
+#ctl, 
+#group-stats,
+#group_stats, 
+#stats {
+  background-color: @background;
+  color: @foreground;
+  font-weight: bold;
+  margin-right: 2px;
+  border-radius: 4px;
+  padding: 0px 3px 0px 6px;
+}
+
+#group-ctl, 
+#group_ctl, 
+#ctl  {
+  border-radius: 16px 4px 4px 16px;
+}
+
+#group-misc-expander, 
+#group_misc-expander, 
+#misc-expander {
+  margin-right: 3px;
+  border-radius: 16px;
+}
+
+/* ======================
+   CLOCK
+====================== */
+
+#clock {
+  background-color: @background;
+  color: @foreground;
+  font-weight: bold;
+  border-radius: 4px 16px 16px 4px;
+  padding: 0px 6px 0px 4px;
+}
+
+/* ======================
+   SYSTEM MODULE SPACING
+====================== */
+
+#battery,
+#pulseaudio,
+#custom-screenrecording-indicator,
+#custom-update {
+  min-width: 12px;
+  margin: 0 3.5px;
+}
+
+#bluetooth {
+  margin-right: 4px;
+}
+
+#network {
+  margin-left: 4px;
+  margin-right: 9px;
+}
+
+#custom-expand-icon {
+  margin-right: 4px;
+}
+
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  margin-right: 7px;
+}
+
+#memory {
+  margin-right: 2px;
+}
+
+#power-profiles-daemon {
+  margin-right: 3px;
+}
+
+/* ======================
+   TRAY
+====================== */
+
+#tray {
+  background: alpha(@foreground, 0);
+  border-radius: 16px;
+  padding: 0 5px;
+  margin: 3.5px 0px;
+  margin-right: 1px;
+  margin-left: -2px;
+}
+
+/* ======================
+   CUSTOM MODULES
+====================== */
+
+#custom-omarchy {
+  border-radius: 32px;
+  color: @color6;
+  background-color: @background;
+  padding: 0 7px;
+  margin: 1 1px;
+}
+
+#custom-update {
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #f13333;
+}
+
+/* ======================
+   POWER PROFILES
+====================== */
+
+#power-profiles-daemon.performance {
+  color: #de6868;
+}
+
+#power-profiles-daemon.balanced {
+  color: @color3;
+}
+
+#power-profiles-daemon.power-saver {
+  color: #31a93f;
+}
+
+/* ======================
+   MPRIS
+====================== */
+
+#mpris {
+  background-color: @background;
+  color: @foreground;
+  font-weight: bold;
+  margin-right: 2px;
+  border-radius: 16px;
+  margin-top: 1px;
+  padding: 0px 10px 0px 8px;
+}
+
+#mpris.playing {
+  animation: mpris-breathe 4s ease-in-out infinite;
+}
+
+@keyframes mpris-breathe {
+  0% {
+    text-shadow: 0 0 1px alpha(@accent,0.15);
+  }
+
+  50% {
+    text-shadow: 0 0 3px alpha(@accent,0.35);
+  }
+
+  100% {
+    text-shadow: 0 0 1px alpha(@accent,0.15);
+  }
+}
+
+/* ======================
+   TOOLTIP
+====================== */
+
+tooltip {
+  background: @background;
+  border: 1px solid alpha(@accent, 0.5);
+}
+
+tooltip label {
+  color: @foreground;
+}
